@@ -606,10 +606,7 @@ dview_get_utf (char *str, int *char_length, gboolean * result)
         ch = res;
         /* Calculate UTF-8 char length */
         next_ch = g_utf8_next_char (str);
-        if (next_ch != NULL)
-            chlen = next_ch - str;
-        else
-            ch = 0;
+        chlen = next_ch - str;
     }
     *char_length = chlen;
     return ch;
